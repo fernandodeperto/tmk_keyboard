@@ -32,13 +32,5 @@ int main() {
                 break;
             }
         }
-        if (matrix_on)
-            gpio_write(&led, 1);
-        else {
-            if (timer_elapsed(t) > 500) {
-                gpio_write(&led, !gpio_read(&led));
-                t = timer_read();
-            }
-        }
     }
 }
